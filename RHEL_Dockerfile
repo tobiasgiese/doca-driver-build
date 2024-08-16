@@ -88,7 +88,8 @@ ARG OFED_SRC_LOCAL_DIR
 
 RUN set -x && \
 # MOFED installation requirements
-    dnf install -y autoconf gcc make rpm-build
+    dnf install -y autoconf gcc make rpm-build && \
+    dnf install -y kernel-${D_KERNEL_VER} kernel-core-${D_KERNEL_VER} kernel-devel-${D_KERNEL_VER} kernel-headers-${D_KERNEL_VER}
 
 # Build driver
 RUN set -x && \
